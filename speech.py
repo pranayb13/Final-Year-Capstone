@@ -27,7 +27,6 @@ while(1):
         #     print("Did you say "+MyText)
         #     SpeakText(MyText)
 
-        # var = int(input("Enter Command to be performed : "))
         var = input('Enter Command : ')
         var = var.upper()
         gs.implementGesture(var)

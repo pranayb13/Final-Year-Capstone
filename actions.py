@@ -225,14 +225,17 @@ def letterZ():
 
 def wordHello():
     tempVar = angV.getAngle("HELLO")
+    print("Hello")
     setWrist(tempVar, 2)
 
 
 def wordOkay():
     tempVar = angV.getAngle("OK")
+    print("Okay")
     setWrist(tempVar, 1)
 
 
 def wordBye():
     tempVar = angV.getAngle("BYE")
+    print("Bye")
     setWrist(tempVar, 3)

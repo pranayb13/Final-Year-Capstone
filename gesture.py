@@ -1,6 +1,5 @@
 import actions as act
 
-
 def callNum(sign):
     numbersDict = {'1': act.number1, '2': act.number2, '3': act.number3, '4': act.number4, '5': act.number5, '6': act.number6, '7': act.number7, '8': act.number8, '9': act.number9}
     numbersDict[sign]()
@@ -12,8 +11,8 @@ def callAlphabet(sign):
 
 
 def callWords(sign):
-    wordsDict = {"HELLO": act.wordHello(),"OK": act.wordOkay(),"BYE": act.wordBye()}
-    wordsDict[sign]
+    wordsDict = {"HELLO": act.wordHello,"OK": act.wordOkay,"OKAY": act.wordOkay,"BYE": act.wordBye}
+    wordsDict[sign]()
 
 
 def implementGesture(sign):
@@ -21,7 +20,7 @@ def implementGesture(sign):
     numbersList = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     alphabetList = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
                     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    wordList = ["HELLO", "OK", "BYE"]
+    wordList = ["HELLO", "OK","OKAY", "BYE"]
 
     if signLength == 1:
         num = 0
