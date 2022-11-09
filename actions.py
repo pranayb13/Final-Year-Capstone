@@ -1,29 +1,65 @@
 import angleValues as angV
-
-
-def resetWrist():
-    # Write the code to reset the wrist position to defualt position
-    var = 1
-    return var
-
+import RPi.GPIO as GPIO
+import time
 
 def setWrist(var, numberOfCycles):
     # Write the code for implementing gesture
     # Setup all Servos and then perform actions
-    resetWrist()
+    GPIO.setmode(GPIO. BOARD)
+    # Finger 1
+    GPIO.setup(11, GPIO.OUT)
+    servo1 = GPIO.PWM(11, 50)
+    servo1.start(0)
 
+    # Finger 2
+    GPIO.setup(11, GPIO.OUT)
+    servo2 = GPIO.PWM(11, 50)
+    servo2.start(0)
+
+    # Finger 3
+    GPIO.setup(11, GPIO.OUT)
+    servo3 = GPIO.PWM(11, 50)
+    servo3.start(0)
+
+    # Finger 4
+    GPIO.setup(11, GPIO.OUT)
+    servo4 = GPIO.PWM(11, 50)
+    servo4.start(0)
+
+    # Finger 5 (THUMB)
+    GPIO.setup(11, GPIO.OUT)
+    servo5 = GPIO.PWM(11, 50)
+    servo5.start(0)
+
+    var = True
+    count = 1
+    while var:
+        count+=1
+        servo1.ChangeDutyCycle(var[0])
+        servo2.ChangeDutyCycle(var[1])
+        servo3.ChangeDutyCycle(var[2])
+        servo4.ChangeDutyCycle(var[3])
+        servo5.ChangeDutyCycle(var[4])
+
+        time.sleep(2)
+
+        servo1.ChangeDutyCycle(2)
+        servo2.ChangeDutyCycle(2)
+        servo3.ChangeDutyCycle(2)
+        servo4.ChangeDutyCycle(2)
+        servo5.ChangeDutyCycle(2)
+        if count==numberOfCycles:
+            var = False
 
 def number1():
     tempVar = angV.getAngle('1')
     print('1')
-    # setWrist(tempVar, 1)
+    setWrist(tempVar, 1)
     
 def number2():
     tempVar = angV.getAngle('2')
     print('2')
     setWrist(tempVar, 1)
-    return 
-
 
 def number3():
     tempVar = angV.getAngle('3')
